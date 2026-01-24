@@ -782,12 +782,20 @@ img {
     }
 
     /* Fix for long email on mobile */
+    .contact-details {
+        min-width: 0;
+        /* Critical for flex items to shrink below content size */
+    }
+
     .contact-link {
-        font-size: 0.9rem;
-        /* Smaller font for email */
-        word-break: break-word;
-        /* Allow wrapping if needed */
-        overflow-wrap: break-word;
+        font-size: 0.85rem;
+        /* Slightly smaller */
+        word-break: break-all;
+        /* Force break if necessary */
+        overflow-wrap: anywhere;
+        /* Best modern support for this */
+        display: block;
+        /* Ensure it takes width to break */
     }
 }
 
