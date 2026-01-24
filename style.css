@@ -871,8 +871,10 @@ img {
 }
 
 .marquee-content {
-    display: inline-flex;
-    animation: marquee 20s linear infinite;
+    display: flex;
+    gap: 20px;
+    animation: marquee 30s linear infinite;
+    /* Slower 30s loop */
 }
 
 .marquee-content img {
