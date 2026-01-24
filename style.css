@@ -492,28 +492,30 @@ img {
 /* DESKTOP LAYOUT (Split View) */
 @media (min-width: 992px) {
     .contact-split-container {
-        flex-direction: row;
+        flex-direction: column;
+        /* Stack Info and Map vertically */
         align-items: stretch;
         gap: 40px;
     }
 
     .contact-info-side {
-        flex: 1;
+        width: 100%;
     }
 
-    /* Change vertical stack to 2x2 Grid on Desktop */
+    /* Keep vertical stack as 2x2 Grid on Desktop */
     .contact-stack {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        /* 2 columns */
         gap: 25px;
     }
 
-    /* Make map side flexible */
+    /* Map side full width underneath */
     .contact-map-side {
-        flex: 1;
-        height: auto;
-        min-height: 100%;
-        /* Match height of info side */
+        width: 100%;
+        height: 400px;
+        /* Fixed height for map */
+        border-radius: 12px;
     }
 }
 
@@ -877,14 +879,16 @@ img {
     display: flex;
     gap: 10px;
     /* Tighter spacing */
-    animation: marquee 15s linear infinite;
-    /* Faster 15s loop */
+    animation: marquee 40s linear infinite;
+    /* Slow 40s loop */
 }
 
 .marquee-content img {
     height: 250px;
     /* Fixed height for uniformity */
     width: auto;
+    flex-shrink: 0;
+    /* Critical: Prevent shrinking */
     margin-right: 0;
     /* Use flex gap instead */
     border-radius: 10px;
