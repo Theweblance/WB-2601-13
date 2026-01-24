@@ -734,9 +734,12 @@ img {
     }
 
     /* Marquee Mobile Adjustment */
+    /* Marquee Mobile Adjustment */
     .marquee-content img {
-        height: 150px;
-        margin-right: 15px;
+        height: 250px;
+        /* Increased to match desktop size for visibility */
+        margin-right: 0;
+        /* Use gap from parent flex container instead */
     }
 
     /* Mobile Menu Styles */
