@@ -440,43 +440,207 @@ img {
     }
 }
 
-/* 5) CONTACT SECTION */
-.contact {
-    background-color: #343a40;
-    color: var(--white);
-    text-align: center;
-    padding-bottom: 30px;
+/* 5) NEW FOOTER SECTION */
+.footer-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* Grey to Sky Blue Gradient */
+    padding: 60px 0 30px;
+    color: #333;
+    position: relative;
+    border-top: 1px solid #e0e0e0;
 }
 
-.contact h2 {
-    color: var(--width);
-    margin-bottom: 40px;
-}
-
-.contact-info {
-    margin-bottom: 40px;
-}
-
-.phone-number {
+.footer-title {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--secondary-color);
-    margin: 20px 0;
-    display: block;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    text-align: center;
+    /* Centered title */
 }
 
-.contact p {
+.contact-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-split-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Map Default (Mobile) */
+.contact-map-side {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #e0e0e0;
+    /* Placeholder */
+}
+
+.contact-map-side iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* DESKTOP LAYOUT (Split View) */
+@media (min-width: 992px) {
+    .contact-split-container {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .contact-info-side {
+        flex: 1;
+    }
+
+    /* Change vertical stack to 2x2 Grid on Desktop */
+    .contact-stack {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    /* Make map side flexible */
+    .contact-map-side {
+        flex: 1;
+        height: auto;
+        min-height: 100%;
+        /* Match height of info side */
+    }
+}
+
+
+.contact-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Slight transparency */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+    transition: transform 0.2s ease;
+}
+
+.contact-block:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+}
+
+.contact-icon img {
+    width: 100%;
+    height: 100%;
+    /* No filter needed if icons are black/dark grey by default. Or use CSS filter for specific color */
+    opacity: 0.7;
+}
+
+.contact-details h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.contact-details p,
+.contact-link {
     font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: #ccc;
+    color: #2c3e50;
+    line-height: 1.5;
+    font-weight: 500;
 }
 
-.footer {
-    border-top: 1px solid #555;
+.contact-link {
+    text-decoration: none;
+    transition: color 0.2s;
+    border-bottom: 1px dashed #bdc3c7;
+    /* Subtle visual cue for links */
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 20px;
     font-size: 0.9rem;
-    color: #888;
+    color: #7f8c8d;
 }
+
+/* Floating Action Buttons (FAB) */
+.fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.fab-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    /* Default bg */
+}
+
+.fab-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.fab-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+.fab-call {
+    background-color: #007bff;
+    /* Blue */
+}
+
+.fab-call img {
+    filter: brightness(0) invert(1);
+    /* White icon */
+}
+
+.fab-whatsapp {
+    background-color: #25D366;
+    /* Green */
+}
+
+.fab-whatsapp img {
+    filter: brightness(0) invert(1);
+    /* White icon */
+}
+
 
 /* Hamburger Menu Default Styles */
 .hamburger {
@@ -495,6 +659,27 @@ img {
 
 /* Responsive Tweaks */
 @media (max-width: 768px) {
+
+    .fab-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .fab-btn img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .fab-container {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .footer-title {
+        font-size: 1.8rem;
+    }
+
+    /* Existing Mobile Styles below... */
     .hero h1 {
         font-size: 2rem;
     }
@@ -552,10 +737,6 @@ img {
     .marquee-content img {
         height: 150px;
         margin-right: 15px;
-    }
-
-    .contact-info .phone-number {
-        font-size: 1.5rem;
     }
 
     /* Mobile Menu Styles */

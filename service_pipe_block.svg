@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Pipe outline -->
+  <path d="M2 12h20" stroke-opacity="0.2" stroke-dasharray="4 4" />
+  <path d="M4 6h16M4 18h16" />
+  <!-- Blockage / Snake tool -->
+  <path d="M6 12l2-2 2 2 2-2 2 2 2-2" />
+  <circle cx="18" cy="12" r="2" />
+</svg>
