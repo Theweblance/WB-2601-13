@@ -785,11 +785,13 @@ img {
     .contact-details {
         min-width: 0;
         /* Critical for flex items to shrink below content size */
+        width: 100%;
+        /* Force full width use */
     }
 
     .contact-link {
-        font-size: 0.85rem;
-        /* Slightly smaller */
+        font-size: 0.75rem;
+        /* Significantly smaller */
         word-break: break-all;
         /* Force break if necessary */
         overflow-wrap: anywhere;
