@@ -877,10 +877,12 @@ img {
 
 .marquee-content {
     display: flex;
+    width: max-content;
+    /* Critical: Forces container to fit all images */
     gap: 10px;
     /* Tighter spacing */
-    animation: marquee 40s linear infinite;
-    /* Slow 40s loop */
+    animation: marquee 15s linear infinite;
+    /* Fast 15s loop */
 }
 
 .marquee-content img {
