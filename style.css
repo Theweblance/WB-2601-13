@@ -875,16 +875,18 @@ img {
 
 .marquee-content {
     display: flex;
-    gap: 20px;
-    animation: marquee 30s linear infinite;
-    /* Slower 30s loop */
+    gap: 10px;
+    /* Tighter spacing */
+    animation: marquee 15s linear infinite;
+    /* Faster 15s loop */
 }
 
 .marquee-content img {
     height: 250px;
     /* Fixed height for uniformity */
     width: auto;
-    margin-right: 20px;
+    margin-right: 0;
+    /* Use flex gap instead */
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
