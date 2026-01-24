@@ -781,23 +781,19 @@ img {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Fix for long email on mobile */
+    /* Fix for long email on mobile - Manual Break used instead */
     .contact-details {
         min-width: 0;
-        /* Critical for flex items to shrink below content size */
         width: 100%;
-        /* Force full width use */
     }
 
+    /* Restoring font size as user requested, relying on <br> tag */
     .contact-link {
-        font-size: 0.75rem;
-        /* Significantly smaller */
-        word-break: break-all;
-        /* Force break if necessary */
-        overflow-wrap: anywhere;
-        /* Best modern support for this */
+        /* font-size: 0.75rem;  <-- Removed to keep same size as phone */
+        word-break: normal;
+        /* Back to normal */
+        overflow-wrap: normal;
         display: block;
-        /* Ensure it takes width to break */
     }
 }
 
